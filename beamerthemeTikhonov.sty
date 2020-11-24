@@ -1,0 +1,91 @@
+\ProvidesPackage{beamerthemeTikhonov} 
+% this style was adapted by M. Tikhonov from a similar style created by Thomas Deselaers an Philippe Dreuw
+
+
+\usepackage{color}
+\usepackage{xcolor}
+
+\definecolor{uvaorange}{RGB}{229.,114.,0.}
+\definecolor{uvablue}{RGB}{35.,45.,75.}
+
+\mode<presentation>
+
+\setbeamercolor{headline}{fg=white,bg=uvablue}
+\setbeamercolor{footline}{fg=white,bg=uvablue}
+\setbeamerfont{footline}{size=\large,series=\tt}
+\setbeamercolor{separation line}{bg=black}
+\setbeamercolor{title in headline}{fg=white}
+\setbeamercolor{author in headline}{fg=white}
+\setbeamercolor{institute in headline}{fg=white}
+
+\setbeamercolor{framesubtitle}{fg=uvablue, bg=white}
+\setbeamercolor{author in head/foot}{fg=white, bg=uvablue}
+\setbeamercolor{title in head/foot} {fg=white, bg=uvablue}
+
+\setbeamercolor*{normal text}{bg=white}
+\setbeamercolor*{block body}{fg=black}
+\setbeamercolor*{block title}{fg=white,bg=uvablue}
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamercolor{upper separation line head}{fg=uvablue}
+
+\setbeamercolor*{example body}{fg=gray,bg=white}
+\setbeamercolor*{example text}{fg=gray,bg=white}
+\setbeamercolor*{example title}{bg=gray,fg=white}
+
+%\setbeamercolor{alerted text}{fg=gray}
+
+%\setbeamercolor{example text}{fg=blue}
+\setbeamercolor{structure}{fg=uvablue}
+
+\setbeamercolor{itemize items}{fg=uvablue}
+\setbeamertemplate{itemize items}[triangle] % use triangles instead of bullets
+\setbeamertemplate{navigation symbols}{}    % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[ht=3ex,dp=0.01ex,center,leftskip=-1em,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}%
+    {\phantom{Gg}\insertblocktitle}% phantom because of baseline problem
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[leftskip=1em,colsep*=.75ex,sep=0.5ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+    \leavevmode
+    \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    
+        \vspace{0.5in}
+        \centering
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]} 
+        \vspace{0.5in}
+    \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1em,rightskip=1em]{author in head/foot}%
+    \texttt{https://mtikhonov.com}
+    \hfill
+    \texttt{me@mtikhonov.com}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+}
+
